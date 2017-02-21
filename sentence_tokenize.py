@@ -12,10 +12,10 @@ output_filename = 'hacker_news_comments_sentence_tokenized.txt'
 
 
 if __name__ == '__main__':
-	with io.open(input_filename, 'r') as fi, io.open(output_filename, 'w') as fo:
-		for line in tqdm.tqdm(fi):
-			line = line.strip()
-			tokens = nlp(line)
-			for sentence in tokens.sents:
-				fo.write(sentence.string)
-				fo.write('\n')
+    with io.open(input_filename, 'r') as fi, io.open(output_filename, 'w') as fo:
+        for line in tqdm.tqdm(fi):
+            line = line.strip()
+            tokens = nlp(line)
+            for sentence in tokens.sents:
+                fo.write(sentence.string)
+                fo.write('\n')

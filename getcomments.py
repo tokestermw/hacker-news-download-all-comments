@@ -15,7 +15,7 @@ import re
 
 from HTMLParser import HTMLParser  # python 2.x
 
-filename = 'hacker_news_comments.tsv'
+filename = 'hacker_news_comments.txt'
 
 html_parser = HTMLParser()
 

@@ -61,6 +61,7 @@ while True:
             comment_text = remove_square_brackets(comment_text)
             comment_text = ftfy.fix_text(comment_text)
             comment_text = unidecode.unidecode(comment_text)
+            comment_text = comment_text.replace(">", "")
             # comment_text = comment_text.translate(dict.fromkeys([0x201c, 0x201d, 0x2011, 0x2013, 0x2014, 0x2018, 0x2019, 0x2026, 0x2032]))
             comment_text = u" ".join(comment_text.split())
             comment_text = unicode(comment_text)                

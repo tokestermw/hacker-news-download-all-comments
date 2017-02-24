@@ -28,7 +28,7 @@ remove_square_brackets = lambda x: re.sub(square_brackets, " ", x)
 if os.path.isfile(filename):
     os.remove(filename)
 
-ts = str(int(time.time()))
+ts = int(time.time())
 # df = DataFrame()
 hitsPerPage = 1000
 requested_keys = ["author", "comment_text", "created_at_i", "objectID", "points"]
@@ -46,6 +46,8 @@ while True:
         # data = DataFrame(data["hits"])[requested_keys]
         # df = df.append(data,ignore_index=True)
         # ts = data.created_at_i.min()
+        created_at_i = [d["created_at_i"] for d in data["hits"]]
+        ts = min(created_at_i)
         hits = data["hits"]
         print ("query", i, "n hits", len(hits))
 
